@@ -1,0 +1,73 @@
+body {
+  background: #f0f0f0;
+  font-size: 12px;
+  font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB",\5FAE\8F6F\96C5\9ED1,tahoma,simsun,sans-serif;
+}
+
+@media (min-width: 640px){
+  html>body{
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+  }
+}
+
+#app {
+  overflow: hidden;
+}
+
+/*单行行尾自动...*/
+.f-els-1{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  word-break: break-all;
+}
+
+/*2行行尾自动...  最好设定下height, 防止line-clamp不支持时出现问题*/
+.f-els-2{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+/*3行行尾自动...*/
+.f-els-3{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+/*4行行尾自动...*/
+.f-els-4{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.dot {
+  position: relative;
+  border: 5px solid #ff0000;
+  border-radius: 50%;
+  font-size: 0;
+  width: 0;
+  height: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+}

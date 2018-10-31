@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面导航</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            margin: 15px;
+            padding: 10px;
+            background: aliceblue;
+        }
+
+        a {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #42b983;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h1>页面导航</h1>
+<ul>
+    <% for (var key in pages) { %>
+    <%
+    var val = pages[key];
+    var path = val.filename;
+    var dir = config.output.path;
+    var url = path.replace(dir, '').replace('pages/', '');
+    %>
+    <li>
+        <a href="<%= url %>"><%= key %></a>
+    </li>
+    <% } %>
+</ul>
+</body>
+</html>

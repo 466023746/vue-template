@@ -1,0 +1,15 @@
+/*视觉稿px转rem计算函数*/
+/*rem640对应宽度640px的2倍视觉稿，$px为视觉稿上的实际长度*/
+@function rem640($px) {
+  @return $px / 64 + rem;
+}
+
+/*rem750对应宽度750px的2倍视觉稿，$px为视觉稿上的实际长度*/
+@function rem750($px) {
+  @return $px / 75 + rem;
+}
+
+/*rem960对应宽度960px的3倍视觉稿，$px为视觉稿上的实际长度*/
+@function rem960($px) {
+  @return $px / 96 + rem;
+}

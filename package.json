@@ -1,0 +1,64 @@
+{
+  "name": "wap-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "cross-env build=development vue-cli-service serve:ftl",
+    "build:dev": "cross-env build=development vue-cli-service build --mode development",
+    "build:test": "cross-env build=test vue-cli-service build",
+    "build:test:deploy": "npm run clean && npm i && cross-env build=test vue-cli-service build",
+    "build": "cross-env build=production vue-cli-service build",
+    "build:deploy": "npm run clean && npm i && cross-env build=production vue-cli-service build",
+    "build:debug": "cross-env build=debug vue-cli-service build --watch --mode production",
+    "serve:debug": "node proxy-debug.js",
+    "debug": "npm run build:debug & npm run serve:debug",
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "lint": "vue-cli-service lint",
+    "create:page": "sao ./scripts/page-template"
+  },
+  "gitHooks": {
+    "precommit": "lint-staged",
+    "commitmsg": "node ./verify-commit-msg.js"
+  },
+  "lint-staged": {
+    "src/**/*.{vue,js}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@kaola-kol/ct-scrollload": "^2.11.1",
+    "@kaola-kol/ct-toast": "^2.10.0",
+    "@kaola/jsbridge_4ios": "0.1.1",
+    "@kaola/mobileweb-ftl": "0.1.42",
+    "@kaola/mobileweb-helper": "0.4.45",
+    "@kaola/mobileweb-mcss": "0.4.45",
+    "@kaola/mobileweb-ui": "0.4.45",
+    "@kaola/nej-h5": "0.1.2",
+    "axios": "^0.18.0",
+    "iscroll": "^5.2.0",
+    "lodash": "^4.17.11",
+    "normalize.css": "^8.0.0",
+    "regularjs": "0.6.0",
+    "vue": "^2.5.17",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.3",
+    "@vue/cli-plugin-eslint": "^3.0.3",
+    "@vue/cli-service": "^3.0.3",
+    "copy-webpack-plugin": "^4.5.2",
+    "cross-env": "^5.2.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "glob": "^7.1.3",
+    "html-loader": "^0.5.5",
+    "lint-staged": "^7.3.0",
+    "mcss-loader": "^1.0.1",
+    "node-sass": "^4.9.0",
+    "proxy-local": "^1.0.3",
+    "sao": "^0.22.17",
+    "sass-loader": "^7.0.1",
+    "vue-cli-plugin-ftl-render": "^1.0.2",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
