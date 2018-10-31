@@ -1,6 +1,6 @@
 # wap-vue
 
-社区vue版，[文档](https://github.com/466023746/parcel-plugin-alias/blob/master/DOC.md)
+社区vue版，[文档](https://github.com/466023746/vue-template/blob/master/DOC.md)
 
 ## 开始
 
